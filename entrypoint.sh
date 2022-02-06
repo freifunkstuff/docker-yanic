@@ -33,6 +33,7 @@ ifname = "bat0"
 multicast_address = "ff05::2:1001"
 
 [[respondd.interfaces]]
+ifname = "eth0"
 ip_address = "0.0.0.0"
 send_no_request = true
 port = 10011
@@ -47,13 +48,16 @@ save_interval = "5s"
 offline_after = "1h"
 
 # definition for the new more compressed meshviewer.json
-[[nodes.output.meshviewer]]
+[[nodes.output.meshviewer-ffrgb]]
 enable   = true
 path = "/data/meshviewer/meshviewer.json"
 
-[nodes.output.meshviewer.filter]
+[nodes.output.meshviewer-ffrgb.filter]
 # WARNING: if it is not set to true, it will publish contact information of other persons
 no_owner = false
+
+[[nodes.output.meshviewer]]
+enable   = false
 
 [[nodes.output.nodelist]]
 enable = false
